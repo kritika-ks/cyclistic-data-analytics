@@ -3,12 +3,16 @@
 2- to extract the only columns that are necessary for the analysis.
 */
 
+# Table creation with data
+Below is the command to create a table and adding filtered data from cyclistic database with the exact timeframe.
+```sql
 CREATE TABLE Filtered_Cyclistic_Data AS (
 SELECT ride_id, rideable_type, started_at, ended_at, member_casual
 FROM public."Cyclistic_Trip_Data" 
 WHERE started_at > '2022-06-30 23:59:59' AND ended_at < '2023-07-01 00:00:00'
 ORDER BY started_at ASC 
 	)
+```
 	
 /* *Cleaning the data* 
 1- eliminate errors & nulls, 
